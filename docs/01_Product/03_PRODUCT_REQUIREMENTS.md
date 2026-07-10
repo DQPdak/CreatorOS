@@ -1,323 +1,226 @@
 # CreatorOS - Product Requirements
 
 **Document ID:** DOC-PRD-001
-**Version:** 1.0.0
+
+**Version:** 2.0.0
+
 **Status:** Active
 
 ---
 
 # 1. Purpose
 
-Tài liệu này mô tả **CreatorOS phải làm được gì**.
+Tài liệu này xác định các yêu cầu nghiệp vụ (Product Requirements) của CreatorOS.
 
-Đây là tài liệu quan trọng nhất của giai đoạn thiết kế sản phẩm.
+Nó trả lời câu hỏi:
 
-Toàn bộ:
+> "Người dùng cần gì từ sản phẩm?"
 
-- Database
-- Workflow
-- Module
-- API
-- UI/UX
+Tài liệu này **không** mô tả:
 
-đều được xây dựng từ tài liệu này.
+- Kiến trúc hệ thống.
+- Cấu trúc module.
+- Thiết kế database.
+- Thiết kế API.
+- Thiết kế giao diện.
 
-Tài liệu này **không mô tả cách triển khai**, chỉ mô tả yêu cầu của sản phẩm.
+Các nội dung đó sẽ được mô tả trong các tài liệu riêng.
 
 ---
 
 # 2. Product Overview
 
-CreatorOS là một AI Workflow Operating System giúp Content Creator quản lý toàn bộ quy trình sản xuất nội dung từ khi hình thành ý tưởng đến khi phân tích hiệu quả sau khi xuất bản.
+CreatorOS là một AI Workflow Operating System hỗ trợ người sáng tạo nội dung quản lý toàn bộ quy trình sản xuất và phát triển nội dung trên nhiều nền tảng.
 
-Sản phẩm đóng vai trò là trung tâm điều phối giữa:
-
-- Người dùng
-- AI Agent
-- Workflow
-- Dữ liệu
-- Các nền tảng mạng xã hội
+Sản phẩm hướng đến việc giảm khối lượng công việc thủ công, chuẩn hóa quy trình và hỗ trợ ra quyết định bằng dữ liệu.
 
 ---
 
-# 3. Product Objectives
+# 3. Problem Statement
+
+Hiện nay, người sáng tạo nội dung thường gặp các vấn đề sau:
+
+- Quy trình sản xuất nội dung không thống nhất.
+- Phải sử dụng nhiều công cụ và nhiều AI khác nhau.
+- Khó quản lý prompt và kết quả làm việc của AI.
+- Thiếu dữ liệu để đánh giá hiệu quả nội dung.
+- Không có hệ thống hỗ trợ đưa ra quyết định.
+- Khó mở rộng khi quản lý nhiều kênh hoặc nhiều nền tảng.
+
+CreatorOS được xây dựng để giải quyết các vấn đề này.
+
+---
+
+# 4. Product Goals
 
 CreatorOS phải giúp người dùng:
 
 - Chuẩn hóa quy trình sản xuất nội dung.
-- Giảm thời gian thực hiện công việc lặp lại.
-- Quản lý nhiều AI trong một hệ thống.
-- Quản lý nhiều kênh nội dung.
-- Theo dõi hiệu quả hoạt động.
-- Đưa ra quyết định dựa trên dữ liệu.
-- Dễ dàng mở rộng khi quy mô phát triển.
+- Giảm thời gian thực hiện các công việc lặp lại.
+- Dễ dàng phối hợp nhiều AI trong cùng một quy trình.
+- Quản lý nhiều kênh và nhiều dự án.
+- Đưa ra quyết định dựa trên dữ liệu thay vì cảm tính.
+- Dễ dàng mở rộng khi nhu cầu phát triển tăng lên.
 
 ---
 
-# 4. Target Users
+# 5. Target Users
 
-## 4.1 Individual Creator
+## 5.1 Individual Creator
 
-Người sáng tạo nội dung cá nhân.
-
-Nhu cầu:
-
-- Quản lý một hoặc nhiều kênh.
-- Tiết kiệm thời gian.
-- Có trợ lý AI hỗ trợ.
+Người sáng tạo nội dung cá nhân cần một hệ thống hỗ trợ toàn bộ quy trình làm việc.
 
 ---
 
-## 4.2 Content Team
+## 5.2 Content Team
 
-Nhóm sản xuất nội dung.
-
-Nhu cầu:
-
-- Phân chia công việc.
-- Theo dõi tiến độ.
-- Chuẩn hóa Workflow.
+Nhóm sản xuất nội dung cần chuẩn hóa quy trình và theo dõi tiến độ.
 
 ---
 
-## 4.3 Agency
+## 5.3 Agency
 
-Đơn vị quản lý nhiều khách hàng.
-
-Nhu cầu:
-
-- Quản lý nhiều Workspace.
-- Quản lý nhiều khách hàng.
-- Báo cáo và phân tích tập trung.
+Đơn vị quản lý nhiều khách hàng cần một nền tảng tập trung để quản lý nhiều dự án và nhiều kênh.
 
 ---
 
-# 5. Functional Requirements
+# 6. User Needs
 
-CreatorOS được chia thành các nhóm chức năng sau.
+Người dùng cần có khả năng:
 
----
-
-## FR-01 Workspace Management
-
-Hệ thống phải cho phép:
-
-- Tạo Workspace.
-- Quản lý Workspace.
-- Phân quyền thành viên.
-- Chuyển đổi giữa nhiều Workspace.
+- Quản lý toàn bộ quá trình sản xuất nội dung.
+- Theo dõi tiến độ công việc.
+- Làm việc cùng nhiều AI.
+- Kiểm soát chất lượng đầu ra của AI.
+- Phê duyệt kết quả trước khi chuyển sang bước tiếp theo.
+- Theo dõi hiệu quả sau khi nội dung được xuất bản.
+- Nhận được đề xuất cải thiện từ hệ thống.
 
 ---
 
-## FR-02 Channel Management
+# 7. Functional Requirements
 
-Hệ thống phải cho phép:
+CreatorOS phải đáp ứng các nhóm yêu cầu chức năng sau:
 
-- Quản lý nhiều Channel.
-- Lưu thông tin từng kênh.
-- Theo dõi trạng thái từng kênh.
-- Liên kết với các nền tảng.
+### FR-01
 
----
-
-## FR-03 AI Provider Management
-
-Hệ thống phải:
-
-- Hỗ trợ nhiều AI Provider.
-- Quản lý API Key.
-- Thay đổi Provider mà không ảnh hưởng Workflow.
-- Theo dõi chi phí sử dụng AI.
+Hỗ trợ người dùng quản lý toàn bộ vòng đời của một nội dung từ ý tưởng đến phân tích sau khi xuất bản.
 
 ---
 
-## FR-04 AI Agent Management
+### FR-02
 
-Hệ thống phải:
-
-- Tạo Agent.
-- Cấu hình Agent.
-- Gán Prompt.
-- Gán Model.
-- Quản lý Version.
-- Theo dõi hiệu suất.
+Cho phép người dùng quản lý nhiều dự án, nhiều kênh và nhiều nền tảng trong cùng một hệ thống.
 
 ---
 
-## FR-05 Workflow Management
+### FR-03
 
-Hệ thống phải:
-
-- Tạo Workflow.
-- Chỉnh sửa Workflow.
-- Chạy Workflow.
-- Theo dõi tiến độ Workflow.
-- Lưu lịch sử Workflow.
+Cho phép tích hợp và sử dụng nhiều AI Provider mà không phụ thuộc vào một nhà cung cấp duy nhất.
 
 ---
 
-## FR-06 Content Production
+### FR-04
 
-Workflow sản xuất nội dung phải hỗ trợ:
-
-- Research.
-- Idea Generation.
-- Outline.
-- Script Writing.
-- Review.
-- Voice Generation.
-- Asset Preparation.
-- Video Production.
-- Publishing.
+Cho phép xây dựng các quy trình làm việc gồm nhiều bước với khả năng thêm, xóa hoặc thay đổi từng bước.
 
 ---
 
-## FR-07 Human Review
+### FR-05
 
-Người dùng có thể:
-
-- Xem kết quả từng bước.
-- Chỉnh sửa.
-- Yêu cầu AI làm lại.
-- Phê duyệt để chuyển sang bước tiếp theo.
-
-Không được tự động xuất bản khi chưa có sự phê duyệt.
+Cho phép người dùng xem, chỉnh sửa, từ chối hoặc phê duyệt kết quả của AI tại các bước quan trọng.
 
 ---
 
-## FR-08 Prompt Management
+### FR-06
 
-Hệ thống phải:
-
-- Quản lý Prompt.
-- Version Prompt.
-- So sánh Prompt.
-- Tái sử dụng Prompt.
-- Gắn Prompt cho từng Agent.
+Lưu trữ lịch sử làm việc để có thể theo dõi, đánh giá và tái sử dụng trong tương lai.
 
 ---
 
-## FR-09 Knowledge Base
+### FR-07
 
-Hệ thống phải lưu trữ:
-
-- Prompt.
-- Workflow.
-- Kịch bản.
-- Quyết định.
-- Bài học kinh nghiệm.
-- Tài liệu.
-
-Để các AI có thể tham khảo khi cần.
+Thu thập dữ liệu hoạt động của các kênh và hiển thị dưới dạng báo cáo trực quan.
 
 ---
 
-## FR-10 Analytics
+### FR-08
 
-Hệ thống phải thu thập và hiển thị:
-
-- View.
-- Watch Time.
-- Audience Retention.
-- CTR.
-- RPM.
-- Engagement.
-- Subscriber Growth.
+Phân tích dữ liệu để đưa ra khuyến nghị giúp cải thiện hiệu quả nội dung.
 
 ---
 
-## FR-11 AI Recommendation
+### FR-09
 
-Dựa trên dữ liệu, hệ thống phải có khả năng đề xuất:
-
-- Chủ đề mới.
-- Thời điểm đăng.
-- Cải thiện kịch bản.
-- Tối ưu tiêu đề.
-- Tối ưu thumbnail.
-- Tối ưu Prompt.
+Cho phép nhiều người dùng cùng làm việc trên một dự án với quyền hạn phù hợp.
 
 ---
 
-## FR-12 Dashboard
+### FR-10
 
-Dashboard phải hiển thị:
-
-- Tổng quan hoạt động.
-- Tiến độ Workflow.
-- Trạng thái AI.
-- Hiệu suất kênh.
-- Hiệu suất Agent.
-- Chi phí AI.
-- Doanh thu (khi có).
+Cho phép mở rộng thêm quy trình, AI Agent hoặc nền tảng mới mà không phải thay đổi hệ thống lõi.
 
 ---
 
-## FR-13 Notification
+# 8. Non-Functional Requirements
 
-Hệ thống phải gửi thông báo khi:
+Hệ thống cần đáp ứng các yêu cầu phi chức năng sau:
 
-- Workflow hoàn thành.
-- AI gặp lỗi.
-- Cần người dùng phê duyệt.
-- Có báo cáo mới.
-
----
-
-## FR-14 User Management
-
-Hệ thống phải:
-
-- Đăng nhập.
-- Quản lý tài khoản.
-- Quản lý vai trò.
-- Quản lý quyền truy cập.
+- Dễ mở rộng.
+- Dễ bảo trì.
+- Dễ kiểm thử.
+- Có khả năng ghi log.
+- Có khả năng theo dõi lịch sử thay đổi.
+- Có khả năng cấu hình.
+- Hoạt động ổn định.
+- Bảo mật dữ liệu.
+- Không phụ thuộc vào một AI Provider.
 
 ---
 
-# 6. Non-Functional Requirements
+# 9. Success Metrics
 
-Hệ thống cần đáp ứng:
+CreatorOS được xem là đáp ứng mục tiêu khi có thể:
 
-- Modular Architecture.
-- Scalability.
-- Maintainability.
-- Security.
-- Auditability.
-- High Availability.
-- Logging.
-- Version Control.
+- Giảm thời gian sản xuất nội dung.
+- Tăng hiệu quả vận hành của người dùng.
+- Giảm số thao tác thủ công.
+- Giúp người dùng đưa ra quyết định dựa trên dữ liệu.
+- Hỗ trợ mở rộng từ một kênh lên nhiều kênh mà không cần thay đổi quy trình.
 
 ---
 
-# 7. Product Boundaries
+# 10. Constraints
 
-CreatorOS **không** có mục tiêu trở thành:
+Trong giai đoạn đầu:
 
-- Phần mềm chỉnh sửa video.
-- Phần mềm chỉnh sửa ảnh.
-- AI Chat tổng quát.
-- Mạng xã hội.
-- Nền tảng lưu trữ đám mây.
-
-CreatorOS chỉ tập trung vào **điều phối quy trình và quản lý hệ thống sáng tạo nội dung**.
+- Chỉ tập trung vào YouTube.
+- Không phát triển trình chỉnh sửa video.
+- Không phát triển trình chỉnh sửa hình ảnh.
+- Không thay thế hoàn toàn vai trò của con người.
 
 ---
 
-# 8. Future Expansion
+# 11. Assumptions
 
-Kiến trúc phải cho phép mở rộng thêm:
+CreatorOS được thiết kế với các giả định:
 
-- Marketplace AI Agent.
-- AI Plugin.
-- AI Memory.
-- Blog Workflow.
-- Podcast Workflow.
-- Newsletter Workflow.
-- Mobile Application.
-- SaaS Multi-tenant.
+- AI sẽ tiếp tục phát triển và thay đổi.
+- Người dùng có thể thay đổi AI Provider bất cứ lúc nào.
+- Quy trình sản xuất nội dung sẽ thay đổi theo thời gian.
+- Hệ thống cần đủ linh hoạt để thích nghi với các thay đổi đó.
 
-Mà không cần thiết kế lại hệ thống lõi.
+---
+
+# 12. Out of Scope
+
+Các nội dung sau không thuộc phạm vi của CreatorOS:
+
+- Phát triển mạng xã hội.
+- Lưu trữ video dung lượng lớn.
+- Chỉnh sửa video chuyên nghiệp.
+- Thiết kế đồ họa chuyên nghiệp.
+- Thay thế hoàn toàn đội ngũ sáng tạo nội dung.
 
 ---
 
