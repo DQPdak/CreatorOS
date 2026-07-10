@@ -1,244 +1,200 @@
-# CreatorOS - Project Bootstrap
+# CreatorOS - Project Vision
 
-**Document ID:** PROJ-BOOTSTRAP-001
+**Document ID:** DOC-VISION-001
 **Version:** 1.0.0
 **Status:** Active
-**Owner:** CreatorOS Team
-**Last Updated:** 2026-07-10
 
 ---
 
 # 1. Purpose
 
-Đây là tài liệu khởi động của toàn bộ dự án CreatorOS.
+Tài liệu này định nghĩa tầm nhìn, định hướng và mục tiêu dài hạn của CreatorOS.
 
-Tài liệu này giúp bất kỳ người nào hoặc AI mới tham gia dự án nhanh chóng hiểu:
+Mọi quyết định về sản phẩm, kiến trúc và công nghệ đều phải phù hợp với Vision này.
 
-- Dự án đang xây dựng là gì.
-- Mục tiêu dài hạn của dự án.
-- Quy trình phát triển.
-- Cách sử dụng bộ tài liệu.
-- Những gì nên làm trước khi bắt đầu một công việc.
-
-Tài liệu này **không mô tả chi tiết chức năng của hệ thống**. Những nội dung đó sẽ được trình bày trong các tài liệu chuyên biệt.
+Nếu một yêu cầu mới mâu thuẫn với Vision thì yêu cầu đó phải được xem xét lại trước khi triển khai.
 
 ---
 
-# 2. Project Summary
+# 2. Vision Statement
 
-**Tên dự án:** CreatorOS
+CreatorOS hướng tới việc trở thành một **AI Workflow Operating System** dành cho Content Creator.
 
-CreatorOS là một AI Workflow Operating System được thiết kế dành cho Content Creator.
+Thay vì để người dùng phải sử dụng nhiều công cụ và nhiều AI riêng lẻ, CreatorOS sẽ là trung tâm điều phối toàn bộ quy trình sản xuất nội dung.
 
-Thay vì sử dụng nhiều công cụ và nhiều AI rời rạc, CreatorOS đóng vai trò là hệ thống trung tâm điều phối toàn bộ quy trình sản xuất nội dung.
+AI chỉ là các "chuyên gia" thực hiện từng nhiệm vụ.
 
-Trong CreatorOS:
-
-- AI là các tác nhân (Agent) thực hiện công việc.
-- Workflow quyết định trình tự làm việc.
-- Dữ liệu được lưu trữ tập trung.
-- Con người luôn giữ quyền quyết định cuối cùng.
+Workflow mới là trái tim của hệ thống.
 
 ---
 
-# 3. Project Objectives
+# 3. Mission
 
-## Ngắn hạn
+CreatorOS được xây dựng để giúp người sáng tạo nội dung:
 
-- Xây dựng hệ thống hỗ trợ phát triển kênh YouTube.
-- Chuẩn hóa quy trình sản xuất nội dung.
-- Giảm thời gian thực hiện các công việc lặp lại.
-- Tạo nền tảng kỹ thuật ổn định.
-
-## Trung hạn
-
-- Hỗ trợ nhiều kênh.
-- Hỗ trợ nhiều AI Provider.
-- Xây dựng Dashboard phân tích dữ liệu.
-- Hỗ trợ AI đưa ra khuyến nghị.
-
-## Dài hạn
-
-- Phát triển thành nền tảng SaaS.
-- Hỗ trợ nhiều nền tảng nội dung.
-- Có thể thương mại hóa.
-- Trở thành sản phẩm thực tế và Portfolio chính của dự án.
+- Làm việc nhanh hơn.
+- Làm việc có quy trình.
+- Ra quyết định dựa trên dữ liệu.
+- Giảm phụ thuộc vào một AI hoặc một nền tảng.
+- Quản lý toàn bộ hoạt động sáng tạo trong một hệ thống thống nhất.
 
 ---
 
-# 4. Project Scope (High Level)
+# 4. Core Values
 
-Trong giai đoạn đầu CreatorOS tập trung vào:
+## Documentation First
 
-- Quản lý Workspace.
-- Quản lý Channel.
-- Quản lý Workflow.
-- Quản lý AI Agent.
-- Quản lý Prompt.
-- Quản lý tài liệu.
-- Quản lý dữ liệu phân tích.
-- Hỗ trợ xuất bản nội dung.
+Mọi quyết định đều phải có tài liệu.
 
-Những phạm vi chi tiết sẽ được mô tả trong `PRODUCT_SCOPE.md`.
+Tài liệu là nguồn sự thật của dự án.
 
 ---
 
-# 5. Development Philosophy
+## Human in the Loop
 
-CreatorOS được xây dựng dựa trên các nguyên tắc sau:
+Con người luôn là người quyết định cuối cùng.
 
-- Documentation First.
-- Architecture Before Coding.
-- Human in the Loop.
-- Modular Design.
-- Single Responsibility.
-- Long-term Maintainability.
-- Vendor Independence.
+AI không thay thế con người.
 
-Các nguyên tắc đầy đủ được mô tả trong `PROJECT_PRINCIPLES.md`.
+AI chỉ hỗ trợ.
 
 ---
 
-# 6. Project Lifecycle
+## Workflow First
 
-Toàn bộ dự án được phát triển theo vòng đời sau:
+Workflow quan trọng hơn AI.
 
-1. Requirement
-2. Architecture
-3. Database
-4. Workflow
-5. API Design
-6. UI/UX Design
-7. Implementation
-8. Testing
-9. Review
-10. Deployment
-11. Maintenance
-
-Không được bỏ qua bất kỳ bước nào.
+Nếu thay đổi AI mà Workflow vẫn hoạt động thì kiến trúc được xem là thành công.
 
 ---
 
-# 7. Repository Structure
+## Data Driven
 
-Ở thời điểm hiện tại, cấu trúc dự án gồm ba phần chính:
-
-```text
-CreatorOS/
-
-├── backend/
-├── frontend/
-└── docs/
-```
-
-Các thư mục con sẽ được định nghĩa trong tài liệu `FOLDER_STRUCTURE.md`.
+Mọi đề xuất, tối ưu và chiến lược phải dựa trên dữ liệu thực tế thay vì cảm tính.
 
 ---
 
-# 8. Documentation Structure
+## Continuous Improvement
 
-Tất cả tài liệu được lưu trong thư mục `docs/`.
+CreatorOS phải liên tục học từ dữ liệu lịch sử để cải thiện:
 
-Các tài liệu được chia thành nhiều nhóm:
-
-- Project
-- Product
-- Architecture
-- Database
+- Prompt
 - Workflow
-- Agent
-- Backend
-- Frontend
-- API
-- Testing
-- Deployment
-
-Mỗi nhóm chỉ chứa các tài liệu liên quan đến đúng phạm vi của mình.
+- AI Agent
+- Nội dung
+- Hiệu quả kinh doanh
 
 ---
 
-# 9. AI Collaboration Model
+# 5. Long-term Goals
 
-CreatorOS không sử dụng một AI đa năng.
+## Giai đoạn 1
 
-Thay vào đó, hệ thống được thiết kế theo mô hình nhiều AI chuyên trách.
+Hỗ trợ vận hành một hoặc nhiều kênh YouTube.
+
+---
+
+## Giai đoạn 2
+
+Hỗ trợ nhiều nền tảng:
+
+- TikTok
+- Facebook
+- Instagram
+- Podcast
+
+---
+
+## Giai đoạn 3
+
+Xây dựng hệ thống đa người dùng (Multi-tenant).
+
+Một tài khoản có thể quản lý nhiều Workspace và nhiều Channel.
+
+---
+
+## Giai đoạn 4
+
+Thương mại hóa CreatorOS dưới dạng SaaS.
+
+---
+
+# 6. Product Vision
+
+CreatorOS sẽ không chỉ hỗ trợ tạo nội dung.
+
+Hệ thống sẽ quản lý toàn bộ vòng đời của nội dung:
+
+- Nghiên cứu.
+- Lên ý tưởng.
+- Viết kịch bản.
+- Kiểm duyệt.
+- Tạo tài nguyên.
+- Xuất bản.
+- Theo dõi hiệu quả.
+- Phân tích.
+- Đề xuất chiến lược tiếp theo.
+
+---
+
+# 7. AI Vision
+
+CreatorOS không xây dựng một AI toàn năng.
+
+Hệ thống được thiết kế theo mô hình nhiều AI chuyên trách.
 
 Ví dụ:
 
 - Research Agent
-- Planning Agent
-- Story Writer Agent
+- Trend Analysis Agent
+- Script Writer Agent
 - Reviewer Agent
 - SEO Agent
+- Publishing Agent
 - Analytics Agent
-- Business Advisor
+- Business Advisor Agent
 
-Mỗi Agent chỉ đảm nhận một vai trò duy nhất.
+Mỗi Agent chỉ đảm nhận một vai trò rõ ràng.
 
-Việc phối hợp giữa các Agent được điều khiển bởi Workflow.
-
----
-
-# 10. Human Responsibilities
-
-Người phát triển chịu trách nhiệm:
-
-- Xác định yêu cầu.
-- Đưa ra quyết định cuối cùng.
-- Phê duyệt từng giai đoạn.
-- Đánh giá chất lượng.
-- Kiểm soát định hướng dự án.
-
-AI không có quyền tự động thay đổi kiến trúc hoặc triển khai ngoài phạm vi được giao.
+Các Agent phối hợp thông qua Workflow và được con người phê duyệt ở những bước quan trọng.
 
 ---
 
-# 11. Current Phase
+# 8. Technical Vision
 
-Hiện tại dự án đang ở:
+CreatorOS phải đáp ứng các tiêu chí sau:
 
-**Sprint 0 — Foundation**
+- Modular.
+- Scalable.
+- Maintainable.
+- AI Provider Independent.
+- API First.
+- Documentation Driven.
 
-Mục tiêu:
-
-- Hoàn thiện toàn bộ tài liệu nền tảng.
-- Chuẩn hóa quy trình phát triển.
-- Thiết kế hệ thống.
-- Chưa bắt đầu triển khai mã nguồn.
-
----
-
-# 12. Reading Order
-
-Khi tham gia dự án, cần đọc tài liệu theo thứ tự:
-
-1. README.md
-2. PROJECT_BOOTSTRAP.md
-3. PROJECT_VISION.md
-4. PROJECT_PRINCIPLES.md
-5. PRODUCT_REQUIREMENTS.md
-6. PRODUCT_SCOPE.md
-7. MODULE_MAP.md
-8. DOCUMENTATION_STANDARD.md
-9. FOLDER_STRUCTURE.md
-10. TECH_STACK.md
-11. PROJECT_GLOSSARY.md
-
-Việc tuân thủ đúng thứ tự giúp đảm bảo mọi thành viên và AI đều có cùng cách hiểu về hệ thống.
+Kiến trúc phải cho phép thay thế AI Provider mà không cần thay đổi Business Logic.
 
 ---
 
-# 13. Success Criteria
+# 9. Success Definition
 
-Sprint 0 được xem là hoàn thành khi:
+CreatorOS được xem là thành công khi:
 
-- Có đầy đủ bộ tài liệu nền tảng.
-- Xác định rõ phạm vi sản phẩm.
-- Hoàn thiện bản đồ module.
-- Thống nhất kiến trúc tổng thể.
-- Sẵn sàng bước sang giai đoạn thiết kế chi tiết.
+- Có thể vận hành nhiều kênh nội dung.
+- Giảm đáng kể thời gian sản xuất nội dung.
+- Hỗ trợ ra quyết định dựa trên dữ liệu.
+- Dễ dàng mở rộng thêm AI Agent hoặc Workflow mới.
+- Có thể phát triển thành nền tảng SaaS mà không phải thiết kế lại kiến trúc.
 
-Sau Sprint 0, bất kỳ AI nào cũng có thể tham gia dự án chỉ bằng cách đọc tài liệu mà không cần giải thích lại.
+---
+
+# 10. Non-Goals
+
+CreatorOS không hướng tới:
+
+- Tự động tạo và đăng tải nội dung không kiểm duyệt.
+- Thay thế hoàn toàn người sáng tạo.
+- Trở thành phần mềm chỉnh sửa video hoặc hình ảnh.
+- Phụ thuộc vào một AI Provider cụ thể.
 
 ---
 
