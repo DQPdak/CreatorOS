@@ -1,502 +1,297 @@
 # CreatorOS - Project Principles
 
-> Version: 1.0.0
-> Status: Draft
-> Sprint: 0 - Foundation
-> Document Type: Project Principles
-> Last Updated: 2026-07-10
+**Document ID:** DOC-PRINCIPLES-001
+**Version:** 1.0.0
+**Status:** Active
 
 ---
 
-# 1. Mục đích
+# 1. Purpose
 
-Tài liệu này định nghĩa toàn bộ nguyên tắc phát triển CreatorOS.
+Tài liệu này định nghĩa các nguyên tắc bắt buộc trong quá trình phát triển CreatorOS.
 
-Đây là tài liệu bắt buộc đối với:
+Mọi thành viên và mọi AI tham gia dự án đều phải tuân thủ các nguyên tắc này.
 
-- Người phát triển
-- AI
-- Thành viên mới của dự án
-
-Nếu có bất kỳ xung đột nào giữa một quyết định kỹ thuật và tài liệu này thì tài liệu này được ưu tiên.
+Nếu có xung đột giữa một quyết định và tài liệu này thì phải ưu tiên tài liệu này cho đến khi Product Owner phê duyệt thay đổi.
 
 ---
 
-# 2. Triết lý dự án
+# 2. Core Philosophy
 
-CreatorOS không phải là một project học tập.
+CreatorOS được xây dựng như một sản phẩm thực tế.
 
-CreatorOS là một sản phẩm thực tế.
+Mục tiêu không phải là hoàn thành nhanh nhất.
 
-Mọi quyết định đều phải hướng tới việc:
+Mục tiêu là tạo ra một hệ thống:
 
-- Có thể sử dụng mỗi ngày.
+- Chất lượng cao.
 - Có thể bảo trì nhiều năm.
 - Có thể mở rộng.
 - Có thể thương mại hóa.
 
 ---
 
-# 3. Nguyên tắc số 1
+# 3. Documentation First
 
-## Documentation is the Source of Truth
+Mọi thay đổi đều bắt đầu từ tài liệu.
 
-Code không phải nguồn sự thật.
+Không được:
 
-AI không phải nguồn sự thật.
+- Viết code trước rồi mới bổ sung tài liệu.
+- Thay đổi chức năng mà không cập nhật tài liệu.
+- Bỏ qua bước thiết kế.
 
-Trí nhớ của người phát triển cũng không phải nguồn sự thật.
-
-Tài liệu mới là nguồn sự thật.
-
-Mọi thay đổi đều phải bắt đầu từ tài liệu.
-
-Sau đó mới đến code.
+Mỗi tài liệu là một phần của "Single Source of Truth".
 
 ---
 
-# 4. Human First
+# 4. Architecture Before Coding
 
-AI chỉ là trợ lý.
+Không được viết mã nguồn khi chưa hoàn thành:
 
-Người phát triển là người chịu trách nhiệm cuối cùng.
+- Requirement.
+- Architecture.
+- Database Design.
+- Workflow Design.
+- API Design (nếu có).
 
-Không có AI nào được phép:
-
-- tự quyết định
-- tự merge
-- tự publish
-- tự thay đổi kiến trúc
-
----
-
-# 5. Architecture Before Coding
-
-Không được viết code nếu chưa có:
-
-Requirement
-
-Flow
-
-Entity
-
-API
-
-Review
+Code chỉ là bước hiện thực hóa thiết kế.
 
 ---
 
-# 6. Workflow Before AI
+# 5. Human in the Loop
 
-Workflow là tài sản quan trọng nhất.
+Con người luôn giữ quyền quyết định cuối cùng.
 
-AI chỉ là công cụ.
+Các bước quan trọng như:
 
-Nếu thay AI mà Workflow bị hỏng thì kiến trúc đã sai.
+- Chốt Requirement.
+- Chốt Workflow.
+- Chốt Script.
+- Xuất bản nội dung.
+
+đều phải có sự phê duyệt của người dùng.
 
 ---
 
-# 7. Modular Design
+# 6. AI as Specialized Agents
 
-Mỗi module chỉ giải quyết một nhóm vấn đề.
+CreatorOS không sử dụng một AI làm mọi việc.
 
-Không được tạo module đa chức năng.
+Mỗi AI chỉ đảm nhận một nhiệm vụ rõ ràng.
 
 Ví dụ:
 
-Không nên có
+- Research Agent.
+- Script Writer.
+- Script Reviewer.
+- SEO Agent.
+- Analytics Agent.
 
-AIService
+Việc chia nhỏ giúp:
 
-thực hiện:
-
-- Research
-- Story
-- Voice
-- SEO
-
-Mỗi chức năng phải là module độc lập.
-
----
-
-# 8. Single Responsibility
-
-Một class.
-
-Một service.
-
-Một controller.
-
-Một component.
-
-Chỉ nên có một trách nhiệm chính.
+- Dễ thay thế AI.
+- Dễ đánh giá chất lượng.
+- Dễ mở rộng hệ thống.
 
 ---
 
-# 9. Small Increment
+# 7. AI Provider Independence
 
-Không phát triển 20 module cùng lúc.
-
-Mỗi Sprint chỉ tập trung hoàn thành một số module nhỏ.
-
-Module hoàn thành phải:
-
-- có tài liệu
-- có test
-- có README
-- có changelog
-
----
-
-# 10. Human Approval
-
-Workflow tiêu chuẩn luôn có bước xác nhận.
-
-Ví dụ
-
-Research
-
-↓
-
-Approve
-
-↓
-
-Outline
-
-↓
-
-Approve
-
-↓
-
-Script
-
-↓
-
-Approve
-
-↓
-
-Publish
-
-Không được bỏ qua.
-
----
-
-# 11. AI Collaboration
-
-Không sử dụng một AI làm mọi việc.
-
-Mỗi AI có một vai trò.
+Không phụ thuộc vào một nhà cung cấp AI.
 
 Ví dụ:
 
-Research Agent
+- OpenAI
+- Google
+- Anthropic
+- DeepSeek
+- Các Local Model
 
-↓
-
-Research Reviewer
-
-↓
-
-Story Writer
-
-↓
-
-Story Reviewer
-
-↓
-
-SEO Reviewer
-
-↓
-
-Human
-
-Toàn bộ quá trình phản biện diễn ra nội bộ.
-
-Người dùng chỉ xem kết quả cuối cùng.
+Thay đổi Provider không được làm thay đổi Business Logic.
 
 ---
 
-# 12. AI Provider Independence
+# 8. Modular Design
 
-Không phụ thuộc vào:
+Hệ thống được chia thành các module độc lập.
 
-ChatGPT
+Mỗi module:
 
-Gemini
+- Có mục đích rõ ràng.
+- Có tài liệu riêng.
+- Có thể phát triển độc lập.
+- Có thể kiểm thử độc lập.
 
-Claude
-
-DeepSeek
-
-Nếu một Provider ngừng hoạt động thì chỉ cần thay Provider.
-
-Không thay Workflow.
-
-Không thay Business Logic.
+Không tạo các module đa chức năng.
 
 ---
 
-# 13. Review First
+# 9. Single Responsibility
 
-Không Merge ngay sau khi AI sinh code.
+Một thành phần chỉ nên có một trách nhiệm chính.
 
-Quy trình chuẩn:
+Áp dụng cho:
 
-AI
-
-↓
-
-Self Check
-
-↓
-
-Documentation Update
-
-↓
-
-Developer Review
-
-↓
-
-Merge
+- Module.
+- Service.
+- Controller.
+- Component.
+- AI Agent.
 
 ---
 
-# 14. Documentation Standard
+# 10. Incremental Development
 
-Mọi module đều phải có tài liệu.
+Dự án được phát triển theo Sprint.
 
-Ví dụ
+Mỗi Sprint phải tạo ra Deliverable hoàn chỉnh.
 
-Requirement
-
-Flow
-
-Entity
-
-API
-
-README
-
-CHANGELOG
-
-Không có ngoại lệ.
+Không phát triển nhiều tính năng lớn cùng lúc.
 
 ---
 
-# 15. Ticket Driven Development
+# 11. Review Before Merge
 
-AI không được code theo yêu cầu miệng.
+Mọi thay đổi phải trải qua các bước:
 
-Mọi công việc đều phải có Ticket.
+1. Thiết kế.
+2. Thực hiện.
+3. Tự kiểm tra.
+4. Kiểm tra bởi người phát triển.
+5. Merge.
 
-Một Ticket gồm:
-
-- Mục tiêu
-- Phạm vi
-- Tài liệu tham khảo
-- Tiêu chí hoàn thành
-- Tiêu chí kiểm thử
+Không merge trực tiếp.
 
 ---
 
-# 16. No Scope Creep
+# 12. Data Driven Decision
 
-Không thêm tính năng vì "hay".
-
-Trước khi thêm tính năng phải trả lời:
-
-- Giải quyết vấn đề gì?
-- Có đúng Vision không?
-- Có đúng Scope không?
-- Có cần ở Sprint hiện tại không?
-
-Nếu không trả lời được thì không phát triển.
-
----
-
-# 17. Data First
-
-Mọi quyết định tối ưu đều dựa trên dữ liệu.
-
-Không dựa trên cảm tính.
+Các quyết định tối ưu nội dung phải dựa trên dữ liệu.
 
 Ví dụ:
 
-Không nói
+- CTR.
+- Watch Time.
+- Audience Retention.
+- RPM.
+- Engagement.
+- Conversion.
 
-"Tôi nghĩ video này hay."
-
-Mà phải có dữ liệu:
-
-- CTR
-- Retention
-- View
-- RPM
-- Engagement
+Không tối ưu chỉ dựa trên cảm nhận.
 
 ---
 
-# 18. Version Everything
+# 13. Version Everything
 
-Mọi thứ đều có Version.
+Mọi thành phần đều phải có phiên bản.
 
 Bao gồm:
 
-- Prompt
-- Workflow
-- Agent
-- Requirement
-- API
-- Database
-- Module
+- Prompt.
+- Workflow.
+- Module.
+- API.
+- Database.
+- Documentation.
 
-Không ghi đè.
-
-Luôn có lịch sử.
+Điều này giúp dễ theo dõi lịch sử thay đổi.
 
 ---
 
-# 19. AI Must Update Documentation
+# 14. Ticket Driven Development
 
-Sau khi hoàn thành một Ticket AI bắt buộc:
+Mọi công việc đều phải có Ticket.
 
-- cập nhật README
-- cập nhật CHANGELOG
-- cập nhật MODULE_REGISTRY
-- cập nhật tài liệu liên quan
+Một Ticket tối thiểu cần có:
 
-Không chỉ sinh code.
+- Mục tiêu.
+- Phạm vi.
+- Tiêu chí hoàn thành.
+- Tài liệu tham khảo.
 
----
-
-# 20. Long-Term Thinking
-
-CreatorOS được thiết kế cho vòng đời nhiều năm.
-
-Không ưu tiên giải pháp nhanh nếu làm giảm:
-
-- chất lượng
-- khả năng mở rộng
-- khả năng bảo trì
+Không làm việc dựa trên mô tả miệng.
 
 ---
 
-# 21. Quy trình phát triển chuẩn
+# 15. Documentation Maintenance
 
-Requirement
+Sau mỗi thay đổi, phải cập nhật:
 
-↓
+- README (nếu cần).
+- Tài liệu liên quan.
+- CHANGELOG.
+- MODULE_REGISTRY (khi áp dụng).
 
-Review
-
-↓
-
-Architecture
-
-↓
-
-Review
-
-↓
-
-Database
-
-↓
-
-Review
-
-↓
-
-Workflow
-
-↓
-
-Review
-
-↓
-
-API
-
-↓
-
-Review
-
-↓
-
-UI
-
-↓
-
-Review
-
-↓
-
-Ticket
-
-↓
-
-AI Development
-
-↓
-
-Testing
-
-↓
-
-Developer Review
-
-↓
-
-Merge
+Tài liệu luôn phải phản ánh đúng trạng thái hiện tại của hệ thống.
 
 ---
 
-# 22. Quy trình làm việc với AI
+# 16. Security by Design
 
-Mọi AI trước khi thực hiện công việc phải:
+Các vấn đề về bảo mật phải được xem xét ngay từ giai đoạn thiết kế.
 
-1. Đọc PROJECT_BOOTSTRAP
-
-2. Đọc PROJECT_VISION
-
-3. Đọc PROJECT_PRINCIPLES
-
-4. Đọc tài liệu Module liên quan
-
-5. Đọc Ticket
-
-Sau đó mới được bắt đầu.
+Không coi bảo mật là bước xử lý sau cùng.
 
 ---
 
-# 23. Definition of Done
+# 17. Scalability by Design
 
-Một module chỉ được xem là hoàn thành khi:
+Mọi quyết định kiến trúc phải cân nhắc khả năng mở rộng.
 
-✓ Requirement hoàn chỉnh
+Không tối ưu cho một kênh duy nhất nếu điều đó làm hạn chế khả năng phát triển sau này.
 
-✓ Flow hoàn chỉnh
+---
 
-✓ Entity hoàn chỉnh
+# 18. Definition of Done
 
-✓ API hoàn chỉnh
+Một Deliverable chỉ được xem là hoàn thành khi:
 
-✓ Code hoàn chỉnh
+- Requirement rõ ràng.
+- Thiết kế hoàn chỉnh.
+- Được Product Owner chấp thuận.
+- Tài liệu đầy đủ.
+- Code (nếu có) hoạt động đúng.
+- Kiểm thử đạt yêu cầu.
 
-✓ Test đạt
+---
 
-✓ README đầy đủ
+# 19. Project Decision Authority
 
-✓ CHANGELOG cập nhật
+Quyền quyết định được phân chia như sau:
 
-✓ MODULE_REGISTRY cập nhật
+**Product Owner**
 
-✓ Được Developer Review
+- Định hướng sản phẩm.
+- Quyết định tính năng.
+- Phê duyệt cuối cùng.
+
+**Technical Lead**
+
+- Kiến trúc hệ thống.
+- Tiêu chuẩn kỹ thuật.
+- Kế hoạch triển khai.
+
+**AI Agents**
+
+- Thực hiện nhiệm vụ được giao.
+- Đề xuất giải pháp.
+- Không tự ý thay đổi định hướng dự án.
+
+---
+
+# 20. Guiding Principle
+
+Nếu có nhiều giải pháp, hãy ưu tiên giải pháp:
+
+1. Dễ hiểu.
+2. Dễ bảo trì.
+3. Dễ mở rộng.
+4. Dễ kiểm thử.
+5. Ít phụ thuộc.
+6. Có tài liệu rõ ràng.
+
+Đây là tiêu chí mặc định cho mọi quyết định kỹ thuật trong CreatorOS.
 
 ---
 
