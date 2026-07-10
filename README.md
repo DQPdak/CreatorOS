@@ -1,91 +1,64 @@
 # CreatorOS
 
-> **An AI Workflow Operating System for Content Creators**
+> **AI Workflow Operating System for Content Creators**
 
-![Status](https://img.shields.io/badge/status-planning-blue)
-![Phase](https://img.shields.io/badge/phase-sprint--0-lightgrey)
-![License](https://img.shields.io/badge/license-MIT-green)
+CreatorOS là một nền tảng quản lý quy trình sản xuất nội dung bằng AI.
 
----
-
-# Overview
-
-CreatorOS là một nền tảng giúp **quản lý toàn bộ quy trình sản xuất nội dung bằng AI**.
-
-Mục tiêu của dự án không phải là tạo ra một AI duy nhất làm tất cả mọi việc.
-
-Thay vào đó, CreatorOS xây dựng một **hệ sinh thái AI Agent** hoạt động theo Workflow chuẩn, trong đó mỗi AI chỉ đảm nhận một nhiệm vụ cụ thể và phối hợp với các AI khác để hoàn thành công việc.
+Mục tiêu của dự án không phải tạo ra một AI làm mọi việc, mà xây dựng một **Workflow Operating System** cho phép nhiều AI chuyên biệt phối hợp với nhau để hỗ trợ người sáng tạo nội dung.
 
 Người dùng luôn là người đưa ra quyết định cuối cùng.
 
 ---
 
-# Vision
+# Why CreatorOS?
 
-Xây dựng một AI Workflow Operating System có khả năng:
+Hiện nay việc sản xuất nội dung thường gặp các vấn đề:
 
-- Quản lý nhiều kênh nội dung.
+- Phải sử dụng nhiều AI khác nhau.
+- Không có quy trình thống nhất.
+- Khó quản lý Prompt.
+- Khó theo dõi dữ liệu.
+- Khó tối ưu nội dung dựa trên số liệu.
+- Phụ thuộc vào một AI duy nhất.
+
+CreatorOS được xây dựng để giải quyết các vấn đề đó.
+
+---
+
+# Core Goals
+
+- Quản lý toàn bộ Workflow sản xuất nội dung.
 - Quản lý nhiều AI Provider.
-- Quản lý toàn bộ quy trình sáng tạo.
-- Học từ dữ liệu lịch sử.
-- Hỗ trợ ra quyết định dựa trên dữ liệu.
-- Mở rộng thành nền tảng SaaS trong tương lai.
+- Quản lý nhiều Channel.
+- Phân tích dữ liệu và hỗ trợ ra quyết định.
+- Có khả năng mở rộng thành SaaS trong tương lai.
 
 ---
 
-# Current Project Status
+# Supported Platforms
 
-**Current Phase**
+Giai đoạn đầu:
 
-Sprint 0 — Foundation
+- YouTube
 
-**Current Goal**
+Trong tương lai:
 
-Hoàn thiện toàn bộ tài liệu thiết kế trước khi viết bất kỳ dòng code nào.
+- TikTok
+- Facebook
+- Instagram
+- Podcast
+- Blog
+- Newsletter
 
 ---
 
-# Development Strategy
+# Current Status
 
-CreatorOS được phát triển theo nguyên tắc:
+**Phase:** Sprint 0 — Foundation
 
-```text
-Requirement
+Hiện tại dự án đang ở giai đoạn thiết kế.
 
-↓
-
-Architecture
-
-↓
-
-Database
-
-↓
-
-Workflow
-
-↓
-
-API
-
-↓
-
-UI/UX
-
-↓
-
-Implementation
-
-↓
-
-Testing
-
-↓
-
-Deployment
-```
-
-Mọi giai đoạn đều phải có tài liệu hoàn chỉnh trước khi chuyển sang bước tiếp theo.
+Chưa bắt đầu phát triển mã nguồn.
 
 ---
 
@@ -99,118 +72,60 @@ CreatorOS/
 └── docs/
 ```
 
-Chi tiết sẽ được mô tả trong tài liệu `FOLDER_STRUCTURE.md`.
-
 ---
 
 # Documentation
 
-Toàn bộ tài liệu của dự án nằm trong thư mục:
+Toàn bộ tài liệu được lưu trong thư mục:
 
 ```text
 docs/
 ```
 
-Thứ tự đọc:
+Nếu bạn muốn tìm hiểu về dự án, hãy bắt đầu từ:
 
 ```text
-00_Project/
-
-README
-↓
-
-PROJECT_BOOTSTRAP
-↓
-
-PROJECT_VISION
-↓
-
-PROJECT_PRINCIPLES
-↓
-
-PRODUCT_REQUIREMENTS
-↓
-
-PRODUCT_SCOPE
-↓
-
-MODULE_MAP
-↓
-
-DOCUMENTATION_STANDARD
-↓
-
-FOLDER_STRUCTURE
-↓
-
-TECH_STACK
-↓
-
-PROJECT_GLOSSARY
+docs/00_Project/00_PROJECT_BOOTSTRAP.md
 ```
-
-Không nên bỏ qua thứ tự này.
 
 ---
 
-# Development Principles
+# Development Workflow
+
+CreatorOS được phát triển theo quy trình:
+
+```text
+Requirement
+    ↓
+Architecture
+    ↓
+Database
+    ↓
+Workflow
+    ↓
+API
+    ↓
+Frontend
+    ↓
+Backend
+    ↓
+Testing
+    ↓
+Deployment
+```
+
+Mọi giai đoạn đều phải hoàn thành tài liệu trước khi viết code.
+
+---
+
+# Project Philosophy
 
 - Documentation First
 - Architecture Before Coding
 - Human in the Loop
-- AI as Assistant
+- AI as Specialized Agents
 - Modular Design
-- Vendor Independent
 - Long-term Maintainability
-
-Chi tiết được mô tả trong `PROJECT_PRINCIPLES.md`.
-
----
-
-# Target Platforms
-
-Giai đoạn đầu:
-
-- YouTube
-
-Giai đoạn sau:
-
-- TikTok
-- Facebook
-- Instagram
-- Podcast
-- Blog
-- Newsletter
-
-Kiến trúc phải cho phép mở rộng mà không cần thay đổi hệ thống lõi.
-
----
-
-# Technology
-
-Công nghệ sẽ được quyết định sau khi hoàn thành Sprint 0.
-
-Hiện tại dự án chưa khóa Tech Stack.
-
----
-
-# Contributing
-
-Trong giai đoạn hiện tại, mọi thay đổi đều phải bắt đầu từ tài liệu.
-
-Không được viết code khi chưa có:
-
-- Requirement
-- Design
-- Review
-
----
-
-# Project Goal
-
-CreatorOS không chỉ là công cụ phục vụ một kênh YouTube.
-
-Mục tiêu cuối cùng là xây dựng một AI Workflow Operating System có thể sử dụng lâu dài, mở rộng thành nền tảng SaaS và trở thành sản phẩm thực tế có giá trị.
 
 ---
 
