@@ -1,6 +1,6 @@
-# CreatorOS Project Bootstrap
+# Project Bootstrap
 
-**Document ID:** DOC-BOOTSTRAP-001
+**Document ID:** PRJ-001
 
 **Version:** 1.0.0
 
@@ -10,183 +10,260 @@
 
 # 1. Purpose
 
-Đây là tài liệu khởi động của toàn bộ dự án.
+Tài liệu này định nghĩa nền tảng của dự án CreatorOS.
 
-Mọi thành viên hoặc AI trước khi tham gia phát triển CreatorOS đều phải đọc tài liệu này.
+Đây là tài liệu đầu tiên mà mọi thành viên và AI phải đọc trước khi tham gia phát triển dự án.
 
-Tài liệu này không mô tả chi tiết sản phẩm.
+Tài liệu này trả lời các câu hỏi:
 
-Nó định nghĩa cách tham gia dự án và cách sử dụng bộ tài liệu.
+- CreatorOS là dự án gì?
+- Dự án được phát triển theo định hướng nào?
+- Quy trình phát triển ra sao?
+- Quy tắc làm việc là gì?
+- Tài liệu được tổ chức như thế nào?
 
----
-
-# 2. Audience
-
-Tài liệu này dành cho:
-
-- Product Owner
-- Software Architect
-- Backend Developer
-- Frontend Developer
-- AI Engineer
-- QA Engineer
-- AI Agent
+Tài liệu này không mô tả chi tiết sản phẩm, kiến trúc hay cơ sở dữ liệu.
 
 ---
 
-# 3. Project Development Strategy
+# 2. Project Information
 
-CreatorOS không phát triển theo kiểu:
+| Field             | Value                                 |
+| ----------------- | ------------------------------------- |
+| Project Name      | CreatorOS                             |
+| Project Type      | AI Workflow Operating System          |
+| Development Model | Documentation First                   |
+| Repository Type   | Monorepo                              |
+| Primary Language  | English (Documentation & Source Code) |
+| Current Phase     | Documentation & System Design         |
+
+---
+
+# 3. Project Mission
+
+CreatorOS được xây dựng nhằm chuẩn hóa và tự động hóa quy trình sản xuất nội dung số bằng AI.
+
+Thay vì phụ thuộc vào một AI duy nhất, hệ thống sử dụng nhiều AI Agent chuyên trách được điều phối thông qua Workflow nhằm tạo ra quy trình làm việc ổn định, dễ mở rộng và có khả năng thay thế AI Provider khi cần.
+
+---
+
+# 4. Development Philosophy
+
+CreatorOS tuân theo triết lý:
+
+> **Design First. Documentation First. Code Last.**
+
+Mọi quyết định kỹ thuật đều phải được mô tả bằng tài liệu trước khi được triển khai thành mã nguồn.
+
+Code chỉ là kết quả của quá trình thiết kế.
+
+---
+
+# 5. Project Objectives
+
+Các mục tiêu chính của dự án:
+
+- Chuẩn hóa quy trình sản xuất nội dung.
+- Hỗ trợ nhiều nền tảng nội dung.
+- Điều phối nhiều AI Agent.
+- Giảm thao tác thủ công.
+- Quản lý nhiều Workspace và nhiều Channel.
+- Hỗ trợ phân tích dữ liệu và ra quyết định.
+- Có khả năng mở rộng thành nền tảng SaaS.
+
+---
+
+# 6. Development Workflow
+
+CreatorOS được phát triển theo quy trình sau:
 
 ```text
-Idea
-    ↓
-Code
-    ↓
-Fix
-```
+Project
 
-CreatorOS được phát triển theo quy trình:
+↓
 
-```text
-Requirement
-    ↓
+Product
+
+↓
+
 Architecture
-    ↓
+
+↓
+
 Database
-    ↓
+
+↓
+
+API
+
+↓
+
 Workflow
-    ↓
-API Design
-    ↓
-UI/UX
-    ↓
+
+↓
+
+AI
+
+↓
+
+UI
+
+↓
+
+Module Specification
+
+↓
+
 Implementation
-    ↓
+
+↓
+
 Testing
-    ↓
+
+↓
+
 Deployment
 ```
 
-Không được bỏ qua bất kỳ bước nào.
+Không được bỏ qua bất kỳ giai đoạn nào.
 
 ---
 
-# 4. Documentation First
+# 7. Documentation Policy
 
-Trong CreatorOS:
+Toàn bộ dự án được điều khiển bằng tài liệu.
 
-- Tài liệu là nguồn sự thật.
-- Code phải tuân theo tài liệu.
-- AI phải đọc tài liệu trước khi thực hiện công việc.
-- Mọi thay đổi phải bắt đầu từ tài liệu.
+Mọi thay đổi đều phải bắt đầu từ tài liệu.
 
----
+Các tài liệu là nguồn thông tin chính thức (Single Source of Truth).
 
-# 5. Repository Overview
-
-```text
-backend/
-```
-
-Chứa toàn bộ Backend.
+Nếu có sự khác biệt giữa Code và Documentation thì Documentation được ưu tiên xem xét trước để xác định đâu là hành vi mong muốn của hệ thống.
 
 ---
 
-```text
-frontend/
-```
+# 8. Human In The Loop
 
-Chứa toàn bộ Frontend.
+AI chỉ đóng vai trò hỗ trợ.
 
----
+Con người luôn là người:
 
-```text
-docs/
-```
-
-Chứa toàn bộ tài liệu.
-
----
-
-# 6. Documentation Reading Order
-
-Khi tham gia dự án, hãy đọc theo thứ tự sau:
-
-1. PROJECT_BOOTSTRAP
-2. PROJECT_VISION
-3. PROJECT_PRINCIPLES
-4. PRODUCT_REQUIREMENTS
-5. PRODUCT_SCOPE
-6. MODULE_MAP
-7. DOCUMENTATION_STANDARD
-8. FOLDER_STRUCTURE
-9. TECH_STACK
-10. PROJECT_GLOSSARY
-
----
-
-# 7. Current Phase
-
-Sprint hiện tại:
-
-**Sprint 0 — Foundation**
-
-Mục tiêu:
-
-- Hoàn thiện tài liệu.
-- Thiết kế hệ thống.
-- Chuẩn hóa quy trình.
-- Chưa viết code.
-
----
-
-# 8. Working Rules
-
-Mọi công việc đều phải:
-
-- Có Requirement.
-- Có tài liệu liên quan.
-- Có Review.
-- Có Commit Message.
-- Có Changelog (khi áp dụng).
-
-Không phát triển trực tiếp từ ý tưởng sang code.
-
----
-
-# 9. Human & AI Responsibilities
-
-Người phát triển:
-
-- Đưa ra quyết định cuối cùng.
+- Phê duyệt yêu cầu.
 - Phê duyệt thiết kế.
+- Phê duyệt kiến trúc.
 - Phê duyệt mã nguồn.
+- Phê duyệt phát hành.
 
-AI:
-
-- Hỗ trợ phân tích.
-- Hỗ trợ thiết kế.
-- Hỗ trợ lập trình.
-- Hỗ trợ kiểm thử.
-- Hỗ trợ tài liệu.
-
-AI không được tự ý thay đổi định hướng dự án.
+Không có bước nào được phép tự động bỏ qua sự kiểm tra của con người.
 
 ---
 
-# 10. Exit Criteria
+# 9. AI Strategy
 
-Sau khi hoàn thành Sprint 0, dự án phải có:
+CreatorOS không phụ thuộc vào bất kỳ AI Provider nào.
 
-- Bộ tài liệu hoàn chỉnh.
-- Kiến trúc tổng thể.
-- Danh sách module.
-- Thiết kế Database.
-- Thiết kế Workflow.
-- Thiết kế API.
+Mọi AI được xem là một Provider có thể thay thế.
 
-Sau đó mới chuyển sang Sprint 1 để bắt đầu phát triển.
+Ví dụ:
+
+- OpenAI
+- Google Gemini
+- Anthropic Claude
+- DeepSeek
+- Local LLM
+
+Việc thay đổi AI Provider không được làm thay đổi kiến trúc của hệ thống.
+
+---
+
+# 10. Repository Strategy
+
+Repository được tổ chức theo mô hình Monorepo.
+
+Các thành phần chính:
+
+- Backend
+- Frontend
+- Documentation
+- Scripts
+- Tools
+
+Mỗi thành phần có trách nhiệm riêng và được phát triển độc lập nhưng tuân theo cùng một bộ tài liệu.
+
+---
+
+# 11. Project Lifecycle
+
+Một chức năng mới phải trải qua các giai đoạn sau:
+
+```text
+Requirement
+
+↓
+
+Analysis
+
+↓
+
+Architecture
+
+↓
+
+Database
+
+↓
+
+API
+
+↓
+
+Workflow
+
+↓
+
+Module Specification
+
+↓
+
+Implementation
+
+↓
+
+Testing
+
+↓
+
+Review
+
+↓
+
+Release
+```
+
+Không được triển khai trực tiếp từ ý tưởng sang mã nguồn.
+
+---
+
+# 12. Success Criteria
+
+CreatorOS được xem là thành công khi:
+
+- Có thể quản lý nhiều dự án nội dung.
+- Có thể quản lý nhiều Channel.
+- Có thể thay thế AI Provider.
+- Có Workflow rõ ràng.
+- Có kiến trúc dễ mở rộng.
+- Có tài liệu đầy đủ.
+- Có khả năng thương mại hóa.
+
+---
+
+# 13. Related Documents
+
+- README.md
+- PRJ-002 Project Vision
+- PRJ-003 Project Principles
+- PRJ-004 Documentation Standard
+- PRD-001 Product Requirements
 
 ---
 

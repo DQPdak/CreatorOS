@@ -1,297 +1,321 @@
-# CreatorOS - Project Principles
+# Project Principles
 
-**Document ID:** DOC-PRINCIPLES-001
+**Document ID:** PRJ-003
+
 **Version:** 1.0.0
+
 **Status:** Active
 
 ---
 
 # 1. Purpose
 
-Tài liệu này định nghĩa các nguyên tắc bắt buộc trong quá trình phát triển CreatorOS.
+Tài liệu này định nghĩa các nguyên tắc cốt lõi trong quá trình thiết kế, phát triển và bảo trì CreatorOS.
 
-Mọi thành viên và mọi AI tham gia dự án đều phải tuân thủ các nguyên tắc này.
+Mọi quyết định về kiến trúc, mã nguồn, cơ sở dữ liệu, giao diện và AI đều phải tuân thủ các nguyên tắc trong tài liệu này.
 
-Nếu có xung đột giữa một quyết định và tài liệu này thì phải ưu tiên tài liệu này cho đến khi Product Owner phê duyệt thay đổi.
+Nếu có nhiều phương án thiết kế khác nhau, phương án phù hợp với các nguyên tắc dưới đây sẽ luôn được ưu tiên.
 
 ---
 
 # 2. Core Philosophy
 
-CreatorOS được xây dựng như một sản phẩm thực tế.
+CreatorOS được xây dựng dựa trên ba triết lý nền tảng:
 
-Mục tiêu không phải là hoàn thành nhanh nhất.
+- Design First
+- Documentation First
+- Code Last
 
-Mục tiêu là tạo ra một hệ thống:
-
-- Chất lượng cao.
-- Có thể bảo trì nhiều năm.
-- Có thể mở rộng.
-- Có thể thương mại hóa.
+Mọi dòng code đều phải xuất phát từ thiết kế.
 
 ---
 
 # 3. Documentation First
 
-Mọi thay đổi đều bắt đầu từ tài liệu.
+Documentation là nguồn thông tin chính thức của toàn bộ dự án.
 
-Không được:
+Quy trình bắt buộc:
 
-- Viết code trước rồi mới bổ sung tài liệu.
-- Thay đổi chức năng mà không cập nhật tài liệu.
-- Bỏ qua bước thiết kế.
+```text
+Requirement
 
-Mỗi tài liệu là một phần của "Single Source of Truth".
+↓
+
+Documentation
+
+↓
+
+Review
+
+↓
+
+Implementation
+```
+
+Không được phép viết code trước tài liệu.
 
 ---
 
 # 4. Architecture Before Coding
 
-Không được viết mã nguồn khi chưa hoàn thành:
+Kiến trúc luôn được thiết kế trước.
 
-- Requirement.
-- Architecture.
-- Database Design.
-- Workflow Design.
-- API Design (nếu có).
+Không được thiết kế kiến trúc trong quá trình viết code.
 
-Code chỉ là bước hiện thực hóa thiết kế.
+Mọi thay đổi lớn phải được phản ánh trong tài liệu Architecture trước khi triển khai.
 
 ---
 
-# 5. Human in the Loop
+# 5. Human In The Loop
 
-Con người luôn giữ quyền quyết định cuối cùng.
+AI là công cụ hỗ trợ.
 
-Các bước quan trọng như:
+Con người luôn chịu trách nhiệm cuối cùng đối với:
 
-- Chốt Requirement.
-- Chốt Workflow.
-- Chốt Script.
-- Xuất bản nội dung.
+- Requirement
+- Architecture
+- Database
+- API
+- Workflow
+- Code Review
+- Release
 
-đều phải có sự phê duyệt của người dùng.
-
----
-
-# 6. AI as Specialized Agents
-
-CreatorOS không sử dụng một AI làm mọi việc.
-
-Mỗi AI chỉ đảm nhận một nhiệm vụ rõ ràng.
-
-Ví dụ:
-
-- Research Agent.
-- Script Writer.
-- Script Reviewer.
-- SEO Agent.
-- Analytics Agent.
-
-Việc chia nhỏ giúp:
-
-- Dễ thay thế AI.
-- Dễ đánh giá chất lượng.
-- Dễ mở rộng hệ thống.
+Không có quyết định quan trọng nào được thực hiện hoàn toàn tự động.
 
 ---
 
-# 7. AI Provider Independence
+# 6. AI Provider Independent
 
-Không phụ thuộc vào một nhà cung cấp AI.
+CreatorOS không phụ thuộc vào bất kỳ AI Provider nào.
 
-Ví dụ:
+Hệ thống phải có khả năng thay thế:
 
 - OpenAI
-- Google
-- Anthropic
+- Claude
+- Gemini
 - DeepSeek
-- Các Local Model
+- Local LLM
 
-Thay đổi Provider không được làm thay đổi Business Logic.
+mà không làm thay đổi kiến trúc tổng thể.
+
+---
+
+# 7. Workflow First
+
+Workflow là trung tâm của hệ thống.
+
+AI không tự hoạt động.
+
+Mọi AI Agent đều phải thực hiện nhiệm vụ thông qua Workflow đã được định nghĩa.
 
 ---
 
 # 8. Modular Design
 
-Hệ thống được chia thành các module độc lập.
+Hệ thống được chia thành các Module độc lập.
 
-Mỗi module:
+Mỗi Module:
 
-- Có mục đích rõ ràng.
+- Có mục tiêu riêng.
 - Có tài liệu riêng.
-- Có thể phát triển độc lập.
+- Có API riêng.
+- Có khả năng phát triển độc lập.
 - Có thể kiểm thử độc lập.
 
-Không tạo các module đa chức năng.
+Module chỉ giao tiếp với nhau thông qua các giao diện đã được định nghĩa.
 
 ---
 
 # 9. Single Responsibility
 
-Một thành phần chỉ nên có một trách nhiệm chính.
+Mỗi thành phần chỉ nên có một trách nhiệm chính.
 
 Áp dụng cho:
 
-- Module.
-- Service.
-- Controller.
-- Component.
-- AI Agent.
+- Module
+- Service
+- Controller
+- Repository
+- React Component
+- AI Agent
+
+Không để một thành phần đảm nhiệm nhiều vai trò khác nhau.
 
 ---
 
-# 10. Incremental Development
+# 10. Separation of Concerns
 
-Dự án được phát triển theo Sprint.
+Tách biệt rõ ràng giữa:
 
-Mỗi Sprint phải tạo ra Deliverable hoàn chỉnh.
+- Business Logic
+- Presentation
+- Data Access
+- Infrastructure
+- AI Logic
 
-Không phát triển nhiều tính năng lớn cùng lúc.
-
----
-
-# 11. Review Before Merge
-
-Mọi thay đổi phải trải qua các bước:
-
-1. Thiết kế.
-2. Thực hiện.
-3. Tự kiểm tra.
-4. Kiểm tra bởi người phát triển.
-5. Merge.
-
-Không merge trực tiếp.
+Không trộn nhiều tầng trong cùng một thành phần.
 
 ---
 
-# 12. Data Driven Decision
+# 11. Single Source of Truth
 
-Các quyết định tối ưu nội dung phải dựa trên dữ liệu.
+Mỗi loại thông tin chỉ có một nguồn chính thức.
 
 Ví dụ:
 
-- CTR.
-- Watch Time.
-- Audience Retention.
-- RPM.
-- Engagement.
-- Conversion.
+- Requirement → Product Documents
+- Architecture → Architecture Documents
+- Database → Database Documents
+- API → API Documents
+- Workflow → Workflow Documents
 
-Không tối ưu chỉ dựa trên cảm nhận.
+Không sao chép cùng một nội dung ở nhiều nơi.
 
 ---
 
-# 13. Version Everything
+# 12. Traceability
 
-Mọi thành phần đều phải có phiên bản.
+Mọi thành phần phải có khả năng truy vết.
+
+Ví dụ:
+
+Requirement
+
+↓
+
+Module
+
+↓
+
+Database
+
+↓
+
+API
+
+↓
+
+Code
+
+↓
+
+Test
+
+↓
+
+Release
+
+Bất kỳ thay đổi nào cũng phải xác định được nguồn gốc.
+
+---
+
+# 13. Review Before Merge
+
+Không được Merge khi chưa hoàn thành:
+
+- Documentation Review
+- Architecture Review
+- Code Review
+- Testing
+
+Review là bước bắt buộc.
+
+---
+
+# 14. Consistency
+
+Toàn bộ dự án phải thống nhất về:
+
+- Cấu trúc thư mục.
+- Quy tắc đặt tên.
+- Coding Style.
+- Documentation Style.
+- Git Convention.
+
+Không tạo ngoại lệ nếu không thực sự cần thiết.
+
+---
+
+# 15. Simplicity
+
+Ưu tiên giải pháp:
+
+- Đơn giản.
+- Dễ đọc.
+- Dễ bảo trì.
+- Dễ mở rộng.
+
+Không tối ưu hóa sớm.
+
+Không sử dụng thiết kế phức tạp khi chưa cần.
+
+---
+
+# 16. Scalability
+
+Mọi thiết kế phải xem xét khả năng mở rộng.
 
 Bao gồm:
 
-- Prompt.
-- Workflow.
-- Module.
-- API.
-- Database.
-- Documentation.
+- Nhiều người dùng.
+- Nhiều Workspace.
+- Nhiều Channel.
+- Nhiều AI Provider.
+- Nhiều Workflow.
+- Nhiều Module.
 
-Điều này giúp dễ theo dõi lịch sử thay đổi.
-
----
-
-# 14. Ticket Driven Development
-
-Mọi công việc đều phải có Ticket.
-
-Một Ticket tối thiểu cần có:
-
-- Mục tiêu.
-- Phạm vi.
-- Tiêu chí hoàn thành.
-- Tài liệu tham khảo.
-
-Không làm việc dựa trên mô tả miệng.
+Không thiết kế chỉ cho nhu cầu hiện tại.
 
 ---
 
-# 15. Documentation Maintenance
+# 17. Security by Design
 
-Sau mỗi thay đổi, phải cập nhật:
+Bảo mật phải được xem xét ngay từ giai đoạn thiết kế.
 
-- README (nếu cần).
-- Tài liệu liên quan.
-- CHANGELOG.
-- MODULE_REGISTRY (khi áp dụng).
+Bao gồm:
 
-Tài liệu luôn phải phản ánh đúng trạng thái hiện tại của hệ thống.
+- Authentication
+- Authorization
+- Input Validation
+- Secret Management
+- Audit Log
 
----
-
-# 16. Security by Design
-
-Các vấn đề về bảo mật phải được xem xét ngay từ giai đoạn thiết kế.
-
-Không coi bảo mật là bước xử lý sau cùng.
+Không bổ sung bảo mật sau khi hệ thống hoàn thành.
 
 ---
 
-# 17. Scalability by Design
+# 18. Data Driven
 
-Mọi quyết định kiến trúc phải cân nhắc khả năng mở rộng.
+Mọi quyết định tối ưu hệ thống nên dựa trên dữ liệu.
 
-Không tối ưu cho một kênh duy nhất nếu điều đó làm hạn chế khả năng phát triển sau này.
+Hệ thống cần có khả năng:
 
----
-
-# 18. Definition of Done
-
-Một Deliverable chỉ được xem là hoàn thành khi:
-
-- Requirement rõ ràng.
-- Thiết kế hoàn chỉnh.
-- Được Product Owner chấp thuận.
-- Tài liệu đầy đủ.
-- Code (nếu có) hoạt động đúng.
-- Kiểm thử đạt yêu cầu.
+- Thu thập dữ liệu.
+- Phân tích dữ liệu.
+- Đưa ra Insight.
+- Hỗ trợ quyết định.
 
 ---
 
-# 19. Project Decision Authority
+# 19. Continuous Improvement
 
-Quyền quyết định được phân chia như sau:
+CreatorOS là dự án phát triển lâu dài.
 
-**Product Owner**
+Tài liệu và mã nguồn được phép cải tiến liên tục nhưng phải đảm bảo:
 
-- Định hướng sản phẩm.
-- Quyết định tính năng.
-- Phê duyệt cuối cùng.
-
-**Technical Lead**
-
-- Kiến trúc hệ thống.
-- Tiêu chuẩn kỹ thuật.
-- Kế hoạch triển khai.
-
-**AI Agents**
-
-- Thực hiện nhiệm vụ được giao.
-- Đề xuất giải pháp.
-- Không tự ý thay đổi định hướng dự án.
+- Không phá vỡ kiến trúc.
+- Không phá vỡ tài liệu.
+- Không làm mất khả năng truy vết.
 
 ---
 
-# 20. Guiding Principle
+# 20. Related Documents
 
-Nếu có nhiều giải pháp, hãy ưu tiên giải pháp:
-
-1. Dễ hiểu.
-2. Dễ bảo trì.
-3. Dễ mở rộng.
-4. Dễ kiểm thử.
-5. Ít phụ thuộc.
-6. Có tài liệu rõ ràng.
-
-Đây là tiêu chí mặc định cho mọi quyết định kỹ thuật trong CreatorOS.
+- README.md
+- PRJ-001 Project Bootstrap
+- PRJ-002 Project Vision
+- PRJ-004 Documentation Standard
+- ARC-001 System Overview
 
 ---
 

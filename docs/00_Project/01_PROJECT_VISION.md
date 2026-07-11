@@ -1,200 +1,192 @@
-# CreatorOS - Project Vision
+# Project Vision
 
-**Document ID:** DOC-VISION-001
+**Document ID:** PRJ-002
+
 **Version:** 1.0.0
+
 **Status:** Active
 
 ---
 
 # 1. Purpose
 
-Tài liệu này định nghĩa tầm nhìn, định hướng và mục tiêu dài hạn của CreatorOS.
+Tài liệu này định nghĩa tầm nhìn dài hạn của CreatorOS.
 
-Mọi quyết định về sản phẩm, kiến trúc và công nghệ đều phải phù hợp với Vision này.
+Vision là kim chỉ nam cho mọi quyết định về sản phẩm, kiến trúc và công nghệ.
 
-Nếu một yêu cầu mới mâu thuẫn với Vision thì yêu cầu đó phải được xem xét lại trước khi triển khai.
+Nếu có nhiều phương án thiết kế khác nhau, phương án phù hợp với Vision sẽ luôn được ưu tiên.
 
 ---
 
 # 2. Vision Statement
 
-CreatorOS hướng tới việc trở thành một **AI Workflow Operating System** dành cho Content Creator.
+> Build an AI Workflow Operating System that enables creators to design, manage and scale content production independently of any specific AI provider.
 
-Thay vì để người dùng phải sử dụng nhiều công cụ và nhiều AI riêng lẻ, CreatorOS sẽ là trung tâm điều phối toàn bộ quy trình sản xuất nội dung.
-
-AI chỉ là các "chuyên gia" thực hiện từng nhiệm vụ.
-
-Workflow mới là trái tim của hệ thống.
+CreatorOS hướng tới việc trở thành một nền tảng nơi con người và AI cùng cộng tác để tạo ra quy trình sản xuất nội dung có khả năng mở rộng, dễ bảo trì và hoạt động bền vững trong nhiều năm.
 
 ---
 
-# 3. Mission
+# 3. Long-Term Vision
 
-CreatorOS được xây dựng để giúp người sáng tạo nội dung:
+Trong dài hạn, CreatorOS không chỉ là công cụ dành cho một người dùng.
 
-- Làm việc nhanh hơn.
-- Làm việc có quy trình.
-- Ra quyết định dựa trên dữ liệu.
-- Giảm phụ thuộc vào một AI hoặc một nền tảng.
-- Quản lý toàn bộ hoạt động sáng tạo trong một hệ thống thống nhất.
+Hệ thống được thiết kế để trở thành một nền tảng có thể phục vụ:
 
----
+- Cá nhân.
+- Nhóm sáng tạo.
+- Studio.
+- Doanh nghiệp.
+- Nền tảng SaaS.
 
-# 4. Core Values
-
-## Documentation First
-
-Mọi quyết định đều phải có tài liệu.
-
-Tài liệu là nguồn sự thật của dự án.
+Mỗi người dùng có thể quản lý nhiều Workspace và nhiều Channel trên cùng một hệ thống.
 
 ---
 
-## Human in the Loop
+# 4. AI Philosophy
 
-Con người luôn là người quyết định cuối cùng.
+CreatorOS không được xây dựng xoay quanh bất kỳ AI nào.
 
-AI không thay thế con người.
+AI chỉ là một Provider.
 
-AI chỉ hỗ trợ.
+Workflow mới là trung tâm.
 
----
+Điều này đảm bảo:
 
-## Workflow First
-
-Workflow quan trọng hơn AI.
-
-Nếu thay đổi AI mà Workflow vẫn hoạt động thì kiến trúc được xem là thành công.
-
----
-
-## Data Driven
-
-Mọi đề xuất, tối ưu và chiến lược phải dựa trên dữ liệu thực tế thay vì cảm tính.
+- Có thể thay đổi AI Provider.
+- Có thể sử dụng nhiều AI cùng lúc.
+- Không phụ thuộc vào một công ty.
+- Có thể tích hợp Local LLM trong tương lai.
 
 ---
 
-## Continuous Improvement
+# 5. Human-Centered Design
 
-CreatorOS phải liên tục học từ dữ liệu lịch sử để cải thiện:
+CreatorOS không hướng tới việc thay thế con người.
 
-- Prompt
-- Workflow
-- AI Agent
-- Nội dung
-- Hiệu quả kinh doanh
+Mục tiêu của hệ thống là:
 
----
+- Giảm thao tác lặp lại.
+- Tăng năng suất.
+- Hỗ trợ ra quyết định.
+- Đưa ra gợi ý dựa trên dữ liệu.
 
-# 5. Long-term Goals
-
-## Giai đoạn 1
-
-Hỗ trợ vận hành một hoặc nhiều kênh YouTube.
+Con người luôn giữ quyền kiểm soát cuối cùng.
 
 ---
 
-## Giai đoạn 2
+# 6. Workflow First
 
-Hỗ trợ nhiều nền tảng:
+Workflow là trái tim của hệ thống.
 
-- TikTok
-- Facebook
-- Instagram
-- Podcast
+Mọi AI Agent đều hoạt động thông qua Workflow.
 
----
+Không có AI nào được phép hoạt động độc lập ngoài quy trình đã được định nghĩa.
 
-## Giai đoạn 3
+Điều này giúp:
 
-Xây dựng hệ thống đa người dùng (Multi-tenant).
-
-Một tài khoản có thể quản lý nhiều Workspace và nhiều Channel.
+- Dễ kiểm soát.
+- Dễ mở rộng.
+- Dễ kiểm thử.
+- Dễ thay đổi.
 
 ---
 
-## Giai đoạn 4
+# 7. Modular Architecture
 
-Thương mại hóa CreatorOS dưới dạng SaaS.
+CreatorOS được thiết kế theo kiến trúc Module.
 
----
+Mỗi Module:
 
-# 6. Product Vision
+- Có trách nhiệm riêng.
+- Có Specification riêng.
+- Có API riêng.
+- Có Database riêng (khi cần).
+- Có tài liệu riêng.
 
-CreatorOS sẽ không chỉ hỗ trợ tạo nội dung.
-
-Hệ thống sẽ quản lý toàn bộ vòng đời của nội dung:
-
-- Nghiên cứu.
-- Lên ý tưởng.
-- Viết kịch bản.
-- Kiểm duyệt.
-- Tạo tài nguyên.
-- Xuất bản.
-- Theo dõi hiệu quả.
-- Phân tích.
-- Đề xuất chiến lược tiếp theo.
+Các Module có thể phát triển độc lập nhưng vẫn hoạt động thống nhất trong cùng một hệ thống.
 
 ---
 
-# 7. AI Vision
+# 8. Data-Driven Decisions
 
-CreatorOS không xây dựng một AI toàn năng.
+CreatorOS hướng tới việc hỗ trợ ra quyết định dựa trên dữ liệu thay vì cảm tính.
 
-Hệ thống được thiết kế theo mô hình nhiều AI chuyên trách.
+Hệ thống sẽ thu thập và phân tích:
 
-Ví dụ:
+- Hiệu suất nội dung.
+- Hiệu suất Workflow.
+- Hiệu suất AI.
+- Hành vi người xem.
+- Xu hướng phát triển.
 
-- Research Agent
-- Trend Analysis Agent
-- Script Writer Agent
-- Reviewer Agent
-- SEO Agent
-- Publishing Agent
-- Analytics Agent
-- Business Advisor Agent
-
-Mỗi Agent chỉ đảm nhận một vai trò rõ ràng.
-
-Các Agent phối hợp thông qua Workflow và được con người phê duyệt ở những bước quan trọng.
+Kết quả phân tích sẽ được trình bày dưới dạng dễ hiểu để hỗ trợ người dùng đưa ra quyết định.
 
 ---
 
-# 8. Technical Vision
+# 9. Scalability
 
-CreatorOS phải đáp ứng các tiêu chí sau:
+Kiến trúc phải cho phép mở rộng theo nhiều hướng mà không cần thay đổi nền tảng.
 
-- Modular.
+Bao gồm:
+
+- Thêm AI Provider.
+- Thêm nền tảng nội dung.
+- Thêm Module.
+- Thêm Workflow.
+- Thêm Plugin.
+- Thêm người dùng.
+
+---
+
+# 10. Commercial Vision
+
+CreatorOS được thiết kế với mục tiêu có thể thương mại hóa.
+
+Trong tương lai hệ thống có thể phát triển thành:
+
+- SaaS Platform.
+- AI Workflow Marketplace.
+- Prompt Marketplace.
+- Plugin Ecosystem.
+- Enterprise Solution.
+
+Kiến trúc hiện tại phải tạo nền tảng cho các khả năng đó.
+
+---
+
+# 11. Success Vision
+
+CreatorOS được xem là đạt được Vision khi:
+
+- Người dùng có thể quản lý toàn bộ quy trình sáng tạo nội dung trên một nền tảng duy nhất.
+- Có thể thay đổi AI Provider mà không cần thay đổi Workflow.
+- Có thể mở rộng hệ thống mà không phá vỡ kiến trúc hiện có.
+- Có thể vận hành nhiều Channel và nhiều Workspace trên cùng một hệ thống.
+- Có thể thương mại hóa thành sản phẩm SaaS.
+
+---
+
+# 12. Vision Principles
+
+Mọi quyết định trong dự án nên hướng tới các mục tiêu sau:
+
+- Sustainable.
 - Scalable.
+- Modular.
 - Maintainable.
-- AI Provider Independent.
-- API First.
-- Documentation Driven.
-
-Kiến trúc phải cho phép thay thế AI Provider mà không cần thay đổi Business Logic.
+- AI-Independent.
+- Human-Centered.
+- Documentation-Driven.
 
 ---
 
-# 9. Success Definition
+# 13. Related Documents
 
-CreatorOS được xem là thành công khi:
-
-- Có thể vận hành nhiều kênh nội dung.
-- Giảm đáng kể thời gian sản xuất nội dung.
-- Hỗ trợ ra quyết định dựa trên dữ liệu.
-- Dễ dàng mở rộng thêm AI Agent hoặc Workflow mới.
-- Có thể phát triển thành nền tảng SaaS mà không phải thiết kế lại kiến trúc.
-
----
-
-# 10. Non-Goals
-
-CreatorOS không hướng tới:
-
-- Tự động tạo và đăng tải nội dung không kiểm duyệt.
-- Thay thế hoàn toàn người sáng tạo.
-- Trở thành phần mềm chỉnh sửa video hoặc hình ảnh.
-- Phụ thuộc vào một AI Provider cụ thể.
+- README.md
+- PRJ-001 Project Bootstrap
+- PRJ-003 Project Principles
+- PRD-001 Product Requirements
+- ARC-001 System Overview
 
 ---
 
